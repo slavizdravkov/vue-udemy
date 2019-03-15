@@ -17,7 +17,7 @@
         <div id="effect" v-bind:class="{highlight: highlight, shrink: shrink}"></div>
     </div>
     <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
-    <div>I got no class :(</div>
+    <div v-bind:class="[dimensionsClass, colorClass, borderClass]">I got no class :(</div>
     <!-- 3) Let the user enter a class (create some example classes) and attach it -->
     <div>
         <input type="text">
@@ -45,7 +45,10 @@
         el: '#exercise',
         data: {
             highlight: false,
-            shrink: false
+            shrink: false,
+            dimensionsClass: 'dimensions',
+            colorClass: 'color',
+            borderClass: 'border'
         },
         methods: {
             startEffect: function() {
