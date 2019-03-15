@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="enen">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../../vue/vue.js"></script>
+</head>
+<body>
+<div id="exercise">
+    <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+    <div>
+        <button @click="startEffect">Start Effect</button>
+        <div id="effect" v-bind:class="{highlight: highlight, shrink: shrink}"></div>
+    </div>
+    <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+    <div>I got no class :(</div>
+    <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+    <div>
+        <input type="text">
+        <div></div>
+    </div>
+    <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
+    <div>
+        <input type="text">
+        <input type="text">
+        <div></div>
+    </div>
+    <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
+    <div>
+        <input type="text">
+        <div></div>
+    </div>
+    <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+    <div>
+        <button>Start Progress</button>
+        <div></div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#exercise',
+        data: {
+            highlight: false,
+            shrink: false
+        },
+        methods: {
+            startEffect: function() {
+                this.highlight = this.shrink;
+                this.shrink = !this.highlight;
+            }
+        }
+    });
+</script>
+</body>
+</html>
