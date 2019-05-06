@@ -3,7 +3,7 @@
         <main-header></main-header>
         <hr>
         <div class="row">
-            <main-servers :servers-count="10"></main-servers>
+            <main-servers></main-servers>
             <server-details></server-details>
         </div>
         <hr>
@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Servers from './components/Servers'
-import ServerDetails from './components/ServerDetails'
+import Header from './components/shared/Header'
+import Footer from './components/shared/Footer'
+import Servers from './components/server/Servers'
+import ServerDetails from './components/server/ServerDetails'
 
 export default {
     components: {
